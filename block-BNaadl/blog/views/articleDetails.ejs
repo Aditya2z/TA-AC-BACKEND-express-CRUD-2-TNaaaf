@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article Details</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="/articles" class="btn-green">⬅ Back to Article List</a>
+      <div class="card">
+          <div class="title">
+            <h1>Title: <%= article.title %></h1>
+          </div>
+          <p class="description">Description: <%= article.description %></p>
+          <p class="tags">Tags: <%= article.tags %></p>
+          <h3 class="author">Author: <%= article.author %></h3>
+          <p class="likes">Likes: <%= article.likes %> </p>
+          <a href="/articles/<%= article._id %>/update" class="btn-blue">Update Article</a>
+          <a href="/articles/<%= article._id %>/delete" class="btn-red">Delete Article</a>
+      </div>
+    </div>
+  </body>
+</html>

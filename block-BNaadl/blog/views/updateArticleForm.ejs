@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article Update Form</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1 class="title">Update the Article</h1>
+    <a href="/articles" class="btn-green">⬅ Back to Article List</a>
+    <div>
+      <a href="/articles/<%= article._id %>" class="btn-green"
+        >⬅ Back to Article Details</a
+      >
+    </div>
+
+    <form action="/articles/<%= article._id %>" method="post">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="<%= article.title %>"
+        required
+      />
+
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        name="description"
+        required
+      ><%= article.description %>"</textarea>
+
+      <label for="tags">Tags:</label>
+      <input type="text" id="tags" name="tags" value="<%= article.tags %>" />
+
+      <label for="author">Author:</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        value="<%= article.author %>"
+        required
+      />
+
+      <label for="likes">Likes:</label>
+      <input
+        type="number"
+        id="likes"
+        name="likes"
+        value="<%= article.likes %>"
+        required
+      />
+
+      <button type="submit" class="btn-blue">Update</button>
+    </form>
+  </body>
+</html>

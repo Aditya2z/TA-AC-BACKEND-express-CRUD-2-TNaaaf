@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% include partials/header.ejs %>
+    <div class="container">
+      <a href="/books" class="btn-black">⬅ Back to Book List</a>
+      <div class="single-card card">
+          <div class="title">
+            <img src="<%= book.cover_image%>" alt="Cover Image">
+            <h1>Title: <%= book.title %></h1>
+          </div>
+          <p class="summary">Description: <%= book.summary %></p>
+          <p class="Category">Category: [ <%= book.category %> ]</p>
+          <h4 class="author">Author: <%= book.authorId.author_name %> (<%= book.authorId.author_country %>) </h4>
+          <p class="pages">Pages: <%= book.pages %></p>
+          <p class="publication">publication: <%= book.publication %></p>
+          <a href="/books/<%= book._id %>/delete" class="btn-red">Delete</a>
+          <% include partials/footer.ejs %>
+      </div>
+    </div>
+  </body>
+</html>

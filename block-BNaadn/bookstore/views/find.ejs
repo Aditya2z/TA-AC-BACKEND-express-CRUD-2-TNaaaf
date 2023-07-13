@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Book</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+    <% include partials/header.ejs %>
+    <a href="/books" class="btn-black">⬅ Back to Book List</a>
+    <div class="container">
+        <h1>Find Book</h1>
+        <form action="/books/find" method="post">
+            <label for="query_key">Find By:</label>
+            <select name="query_key" id="query_key">
+                <option value="title">Book Name</option>
+                <option value="name">Author Name</option>
+                <option value="category">Category</option>
+            </select>
+            <label for="query_value">Enter Value:</label>
+            <input type="text" name="query_value" id="query_value">
+            <input type="submit" class="btn-green" value="Find">
+        </form>
+    </div>
+    <% include partials/footer.ejs %>
+</body>
+</html>
